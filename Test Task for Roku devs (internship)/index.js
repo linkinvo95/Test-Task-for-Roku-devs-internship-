@@ -33,7 +33,7 @@ let lastIndexFocus;
 const createEventListenersForSecondScreen = () => {
   createAccountBtn.addEventListener("keypress", (e) => {
     if (e.keyCode == 13 || e.keyCode == 3) {
-      /*****/
+  
       data.accounts.push({
         title: inputField.value,
         img: IMG,
@@ -58,7 +58,7 @@ const createEventListenersForSecondScreen = () => {
 const displayFirstScreen = (data) => {
   currentScreen = 1;
   root.innerHTML = "";
-  /*****/
+
   const accountContainer = document.createElement("div");
   const add = document.createElement("button");
 
@@ -67,7 +67,7 @@ const displayFirstScreen = (data) => {
   addBtn = add;
   accountContainer.className = "account_container";
 
-  /*****/
+ 
   data.map((account, index) => {
     const div = document.createElement("div");
     const img = document.createElement("img");
@@ -77,13 +77,13 @@ const displayFirstScreen = (data) => {
     img.className = "account_img";
     p.className = "account_title";
 
-    /*****/
+ 
     img.setAttribute("src", account.img);
     p.innerText = account.title;
 
     div.setAttribute("tabindex", String(index));
 
-    /*****/
+   
     div.appendChild(img);
     div.appendChild(p);
 
@@ -93,7 +93,7 @@ const displayFirstScreen = (data) => {
   });
   root.appendChild(add);
 
-  /*****/
+ 
   addBtn.addEventListener("keypress", (e) => {
     if (e.keyCode == 13 || e.keyCode == 3) {
       displaySecondScreen();
@@ -173,7 +173,6 @@ document.addEventListener("keydown", (e) => {
           data.accounts.splice(document.activeElement.tabIndex, 1);
           displayFirstScreen(data.accounts);
 
-          /*****/
           const wrapList2 = document.querySelectorAll(".account_wrap");
           wrapList2[0].focus();
           break;
