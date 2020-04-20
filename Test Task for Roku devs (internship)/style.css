@@ -1,0 +1,16 @@
+.account_img {
+    width: 40px;
+}
+
+.account_title {
+    margin: 0 0 0 20px;
+}
+
+.account_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.account_wrap:focus {
+    border: 1px solid;
+}
